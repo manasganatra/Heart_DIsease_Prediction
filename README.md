@@ -11,8 +11,7 @@ A comprehensive machine learning project to predict heart disease using various 
 - [Model Performance](#model-performance)
 - [Methodology](#methodology)
 - [Results](#results)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## 🎯 Overview
 
