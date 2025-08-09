@@ -1,149 +1,130 @@
-# Cardio-Monitor
+# Heart Disease Prediction Using Machine Learning
 
-[![Project Status](https://img.shields.io/badge/Status-Ongoing-orange)](https://github.com/your-username/cardio-monitor)
-[![Accuracy](https://img.shields.io/badge/Model%20Accuracy-92%25-brightgreen)](https://github.com/your-username/cardio-monitor)
-[![Course](https://img.shields.io/badge/Course-Big%20Data%20Analytics-blue)](https://github.com/your-username/cardio-monitor)
+A comprehensive machine learning project to predict heart disease using various classification algorithms. This project analyzes patient data and builds predictive models to identify individuals at risk of heart disease.
 
-## 🫀 Overview
+## 📋 Table of Contents
+- [Overview](#overview)
+- [Dataset](#dataset)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Model Performance](#model-performance)
+- [Methodology](#methodology)
+- [Results](#results)
+- [Contributing](#contributing)
+- [License](#license)
 
-Cardio-Monitor is an intelligent web application designed to assess heart disease risk through advanced machine learning algorithms.
-This application leverages real-time data processing and predictive modeling to provide early detection capabilities with **92% accuracy**.
+## 🎯 Overview
 
-## 🎯 Problem Statement
+Heart disease is one of the leading causes of death worldwide. This project uses machine learning techniques to predict the likelihood of heart disease in patients based on various medical attributes. The analysis includes data exploration, visualization, feature engineering, and model comparison.
 
-Heart disease remains the leading cause of death globally, accounting for millions of deaths annually. Early detection and continuous monitoring are crucial for reducing mortality rates. Traditional diagnostic methods often detect heart conditions only after significant progression, limiting treatment effectiveness.
+## 📊 Dataset
 
-## 💡 Solution
+The project uses the `heart.csv` dataset containing medical records with the following characteristics:
 
-Our solution combines:
-- **Real-time streaming data analytics** using Apache Spark
-- **Machine learning algorithms** for predictive modeling
-- **IoT integration** for wearable sensor data
-- **Big data processing** for continuous health monitoring
+- **Records**: 303 patient records
+- **Features**: 14 attributes including demographic, clinical, and diagnostic measures
+- **Target**: Binary classification (0 = No heart disease, 1 = Heart disease)
 
-This approach provides a cost-effective, scalable platform for early heart disease detection through real-time data analysis and in-memory computations.
+### Dataset Features
 
-## ✨ Key Features
+| Feature | Description | Type |
+|---------|-------------|------|
+| age | Age of the patient | Continuous |
+| sex | Gender (0 = Female, 1 = Male) | Binary |
+| cp | Chest pain type (0-3) | Categorical |
+| trestbps | Resting blood pressure (mm Hg) | Continuous |
+| chol | Serum cholesterol (mg/dl) | Continuous |
+| fbs | Fasting blood sugar > 120 mg/dl | Binary |
+| restecg | Resting ECG results (0-2) | Categorical |
+| thalach | Maximum heart rate achieved | Continuous |
+| exang | Exercise induced angina | Binary |
+| oldpeak | ST depression induced by exercise | Continuous |
+| slope | Slope of peak exercise ST segment | Categorical |
+| ca | Number of major vessels colored by fluoroscopy | Categorical |
+| thal | Thalassemia (3 = normal, 6 = fixed defect, 7 = reversable defect) | Categorical |
+| target | Heart disease diagnosis | Binary |
 
-- **High Accuracy Prediction**: 92% accuracy in heart disease risk assessment
-- **Real-time Processing**: Instant analysis of streaming health data
-- **IoT Integration**: Compatible with wearable health monitoring devices
-- **Scalable Architecture**: Built on Apache Spark for handling large-scale data
-- **User-friendly Interface**: Intuitive web application for easy interaction
-- **Continuous Monitoring**: Ongoing health status tracking and alerts
-
-## 🛠️ Technology Stack
-
-### Backend
-- **Apache Spark**: Distributed computing and real-time data processing
-- **Machine Learning Libraries**: [Specify libraries used - scikit-learn, MLlib, etc.]
-- **Database**: [Specify database - MongoDB, PostgreSQL, etc.]
-
-### Frontend
-- **Web Framework**: [Specify - React, Vue.js, Flask, etc.]
-- **Visualization**: [Specify charting libraries used]
-
-### Data Sources
-- Wearable sensor devices (IoT)
-- Medical records
-- Real-time physiological data streams
-- Historical health data
-
-## 🏗️ System Architecture
-
-```
-[IoT Devices] → [Data Ingestion] → [Apache Spark] → [ML Model] → [Web Interface]
-      ↓              ↓               ↓            ↓           ↓
-[Sensors]    [Stream Processing] [Real-time]  [Prediction] [Results]
-```
-
-## 📊 Model Performance
-
-- **Accuracy**: 92%
-- **Training Dataset**: [Specify size and source]
-- **Validation Method**: [Cross-validation, train-test split, etc.]
-- **Key Metrics**: 
-  - Precision: [Add value]
-  - Recall: [Add value]
-  - F1-Score: [Add value]
-
-## 🚀 Getting Started
+## 🛠 Installation
 
 ### Prerequisites
+- Python 3.7 or higher
+- pip package manager
 
+### Required Libraries
 ```bash
-# Required software versions
-Python >= 3.8
-Apache Spark >= 3.0
-[Other dependencies]
+pip install numpy pandas matplotlib seaborn scikit-learn
 ```
 
-### Installation
+Or install from requirements file:
+```bash
+pip install -r requirements.txt
+```
+
+### Requirements.txt
+```
+numpy>=1.21.0
+pandas>=1.3.0
+matplotlib>=3.4.0
+seaborn>=0.11.0
+scikit-learn>=1.0.0
+```
+
+## 🚀 Usage
 
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/cardio-monitor.git
-   cd cardio-monitor
-   ```
-
-2. **Set up virtual environment**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Configure Apache Spark**
-   ```bash
-   # Add Spark configuration steps
-   ```
-
-5. **Run the application**
-   ```bash
-   python app.py
-   ```
-
-## 📱 Usage
-
-1. **Data Input**: Upload health data or connect IoT devices
-2. **Real-time Monitoring**: View live health metrics dashboard
-3. **Risk Assessment**: Get instant heart disease risk predictions
-4. **Historical Analysis**: Track health trends over time
-5. **Alerts**: Receive notifications for concerning patterns
-
-## 🎥 Demo
-
-> **Demo video and screenshots will be available soon**
-
-[Placeholder for demo GIF or video link]
-
-## 📈 How It Works
-
-### Data Flow Process
-
-1. **Data Collection**: Continuous ingestion from multiple sources
-2. **Preprocessing**: Data cleaning and feature engineering
-3. **Real-time Analysis**: Apache Spark processes streaming data
-4. **ML Prediction**: Trained model evaluates heart disease risk
-5. **Result Display**: Web interface shows predictions and recommendations
-
-### Machine Learning Pipeline
-
-```
-Raw Data → Feature Engineering → Model Training → Validation → Deployment
+```bash
+git clone https://github.com/yourusername/heart-disease-prediction.git
+cd heart-disease-prediction
 ```
 
+2. **Ensure the dataset is in the project directory**
+Make sure `heart.csv` is in the same directory as your script.
+
+3. **Run the analysis**
+```bash
+python heart_disease_prediction.py
+```
+
+## 📈 Model Performance
+
+The project evaluates three different machine learning algorithms:
+
+| Algorithm | Best Parameters | Cross-Validation Accuracy |
+|-----------|----------------|--------------------------|
+| **K-Neighbors Classifier** | k=12 | ~87.5% |
+| **Decision Tree Classifier** | max_depth=3 | ~82.1% |
+| **Random Forest Classifier** | n_estimators=90 | ~85.2% |
+
+*Note: Exact accuracies may vary due to random state in cross-validation*
+
+## 🔬 Methodology
+
+### 1. Data Exploration
+- Dataset shape and structure analysis
+- Data type identification
+- Missing value detection
+- Statistical summary generation
+
+### 2. Data Visualization
+- Histogram plots for all features
+- Target variable distribution analysis
+- Correlation heatmap for feature relationships
+
+### 3. Feature Engineering
+- **Categorical Encoding**: Applied one-hot encoding to categorical variables (sex, cp, fbs, restecg, exang, slope, ca, thal)
+- **Feature Scaling**: Standardized continuous variables (age, trestbps, chol, thalach, oldpeak) using StandardScaler
+
+### 4. Model Training & Evaluation
+- **Cross-Validation**: Used 10-fold cross-validation for robust evaluation
+- **Hyperparameter Tuning**: Grid search approach for optimal parameters
+- **Performance Visualization**: Plotted accuracy scores across different parameter values
+
+## 📊 Results
+
+### Key Findings:
+1. **Best Performing Model**: K-Neighbors Classifier with k=12 achieved the highest accuracy
+2. **Feature Importance**: Correlation analysis revealed strong relationships between certain features and heart disease
+3. **Balanced Dataset**: The target variable shows relatively balanced distribution
 
 
-
-
-
-
-
----
-
-⭐ **Star this repository if you found it helpful!**
