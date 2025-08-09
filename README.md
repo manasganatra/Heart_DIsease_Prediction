@@ -6,7 +6,8 @@
 
 ## 🫀 Overview
 
-Cardio-Monitor is an intelligent web application designed to assess heart disease risk through advanced machine learning algorithms. Built as a course project for Big Data Analytics (BCSE0158), this application leverages real-time data processing and predictive modeling to provide early detection capabilities with **92% accuracy**.
+Cardio-Monitor is an intelligent web application designed to assess heart disease risk through advanced machine learning algorithms.
+This application leverages real-time data processing and predictive modeling to provide early detection capabilities with **92% accuracy**.
 
 ## 🎯 Problem Statement
 
